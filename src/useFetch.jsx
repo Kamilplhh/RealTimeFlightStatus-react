@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function useFetch(url) {
-    const [flights, setFlights] = useState(null);
+    const [flights, setFlights] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -11,10 +11,10 @@ function useFetch(url) {
         axios
         .get(url)
         .then((response) => {
-            setFlights(response.data);
+            setFlights(response.data);  
         }).catch((err) => {
             setError(err);
-        }).finally(() => {
+        }).finally(() => { 
             setLoading(false);
         });
     }, [url]);

@@ -8,7 +8,7 @@ export default function App() {
 
   if (error) console.log(error);
 
-  console.log(flights);
+  console.log(flights.data);
 
   return (
     <div>
