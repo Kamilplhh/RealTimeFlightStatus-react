@@ -6,6 +6,7 @@ export default function App() {
 
   if (loading) {
     return (
+    <div className="body">
       <div className="scene">
         <div className="shadow"></div>
         <div className="jumper">
@@ -25,6 +26,7 @@ export default function App() {
           </div>
         </div>
       </div>
+      </div> 
     );
   }
 

@@ -5,18 +5,19 @@
     transform-style: preserve-3d;
 }
 
-body {
+.body {
     display: grid;
     place-items: center;
-    min-height: 100vh;
+    padding-top: 60vh;
+    min-height: 40vh;
+    min-width: auto;
     font-family: 'Google Sans', sans-serif, system-ui;
 }
 
 :root {
     --size: 120;
     --coefficient: 1px;
-    --timeline: 2.6s;
-    --delay: 0.65s;
+    --timeline: 4s;
     --rotation-y: -24;
     --rotation-x: 28;
     --color-one: #3a0ca3;
@@ -29,6 +30,10 @@ body {
     transform: translate3d(0, 0, 100vmin) rotateX(calc(var(--rotation-y, 0) * 1deg)) rotateY(calc(var(--rotation-x, 0) * 1deg)) rotateX(0deg);
 }
 
+.body {
+    transform-origin: 50% 50%;
+}
+
 .shadow {
     width: calc(var(--size) * var(--coefficient));
     position: absolute;
@@ -37,7 +42,7 @@ body {
     transform-origin: 50% 50%;
     background: hsl(210 80% 50% / 0.2);
     transform: rotateX(90deg) translate3d(0, 0, calc((var(--size) * (var(--coefficient) * -0.5)) - 1px)) scale(0.96);
-    animation: squish-squosh var(--timeline) var(--delay) infinite, fade var(--timeline) var(--delay) infinite;
+    animation: squish-squosh var(--timeline) infinite, fade var(--timeline) infinite;
     background: black;
 }
 
@@ -47,27 +52,24 @@ body {
     width: calc(var(--depth) * var(--coefficient));
     aspect-ratio: 1;
     transform-origin: 50% 50%;
-    animation: squish-squosh var(--timeline) var(--delay) infinite;
+    animation: squish-squosh var(--timeline) infinite;
 }
 
 .spinner {
-    animation: spin var(--timeline) var(--delay) infinite;
+    animation: spin var(--timeline) infinite;
 }
 
 .jumper {
-    animation: jump var(--timeline) var(--delay) infinite;
+    animation: jump var(--timeline) infinite;
 }
 
 @keyframes squish-squosh {
 
-    0%,
-    50%,
-    60% {
+    0%,50%,60% {
         scale: 1 1 1;
     }
 
-    10%,
-    35% {
+    10%,35% {
         scale: 1.2 0.8 1.2;
     }
 
@@ -83,8 +85,7 @@ body {
         scale: 2 1 2;
     }
 
-    90%,
-    100% {
+    90%,100% {
         scale: 2 2 2;
     }
 }
@@ -92,12 +93,7 @@ body {
 
 @keyframes fade {
 
-    0%,
-    10%,
-    40%,
-    50%,
-    60%,
-    100% {
+    0%,10%,40%,50%,60%,100% {
         opacity: 1;
     }
 
@@ -108,23 +104,18 @@ body {
 
 @keyframes spin {
 
-    0%,
-    10% {
+    0%,10% {
         rotate: 0deg;
     }
 
-    30%,
-    100% {
+    30%,100% {
         rotate: -360deg;
     }
 }
 
 @keyframes jump {
 
-    0%,
-    10%,
-    35%,
-    50% {
+    0%,10%,35%,50% {
         translate: 0 0;
     }
 
