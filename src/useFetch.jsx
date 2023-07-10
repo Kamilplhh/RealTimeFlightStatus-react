@@ -11,10 +11,10 @@ function useFetch(url) {
         axios
         .get(url)
         .then((response) => {
-            setFlights(response.data);  
+            setFlights(response.data.data);  
         }).catch((err) => {
             setError(err);
-        }).finally(() => { 
+        }).finally(() => {       
             setLoading(false);
         });
     }, [url]);
