@@ -14,8 +14,10 @@ function useFetch(url) {
             setFlights(response.data.data);  
         }).catch((err) => {
             setError(err);
-        }).finally(() => {       
-            setLoading(false);
+        }).finally(() => {  
+            const timer = setTimeout(() => setLoading(false), 3000);     
+            
+            return () => clearTimeout(timer);
         });
     }, [url]);
 
