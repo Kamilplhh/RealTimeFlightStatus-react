@@ -5,6 +5,10 @@
     transform-style: preserve-3d;
 }
 
+body{
+  background-color:#001a33;
+}
+
 .body {
     display: grid;
     place-items: center;
@@ -18,8 +22,8 @@
     --size: 120;
     --coefficient: 1px;
     --timeline: 4s;
-    --rotation-y: -24;
-    --rotation-x: 28;
+    --rotation-y: 28;
+    --rotation-x: -24;
     --color-one: #3a0ca3;
     --color-two: #4361ee;
     --color-three: #4cc9f0;
@@ -27,7 +31,8 @@
 
 .scene {
     position: relative;
-    transform: translate3d(0, 0, 100vmin) rotateX(calc(var(--rotation-y, 0) * 1deg)) rotateY(calc(var(--rotation-x, 0) * 1deg)) rotateX(0deg);
+    transform: translate3d(0, 0, 100vmin) rotateX(calc(var(--rotation-x, 0) * 1deg)) rotateY(calc(var(--rotation-y, 0) * 1deg));
+    animation: turn var(--timeline) infinite;
 }
 
 .body {
@@ -122,6 +127,16 @@
     25% {
         translate: 0 -150%;
     }
+}
+
+@keyframes turn {
+  90%{
+    transform: 0;
+  }
+  100%{
+    transform: rotateX(0deg) !important;
+    transform: rotateY(0deg);
+  }
 }
 
 /* Cuboid boilerplate code */
