@@ -2,10 +2,15 @@ body {
     background-color: #001a33;
 }
 
+.dataBlock{
+    display: grid;
+    place-items: center;
+    padding-top: 29vh;
+    height: 40vh;
+    min-width: auto;
+}
+
 .flightData {
-    margin-top: 40vh;
-    margin-left: auto;
-    margin-right: auto;
     width: 800px;
     height: 500px;
     background-color: #4361ee;

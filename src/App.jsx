@@ -46,7 +46,7 @@ export default function App() {
 
   return (
 
-    <div>
+    <div className="dataBlock">
       {flights.map(flight => (
         <div className="flightData">
           <Flight
