@@ -30,35 +30,25 @@ export default function App() {
     );
   }
 
-  function findFlight({ onSubmit }) {
-
-    function Submit(e) {
-    }
-
-    return (
-      <div className="form">
-
-      </div>
-    )
-  }
 
   if (error) console.log(error);
 
   const Flight = ({ id, flightDate, flightStatus, arrival, delay }) => (
+
     <div key={id}>
       <p>{flightDate}</p>
       <p>{flightStatus}</p>
       <p>{arrival}</p>
       <p>{delay}</p>
     </div>
+    
   )
 
   return (
-    <findFlight onSubmit={addTodo} />,
 
     <div>
       {flights.map(flight => (
-        <div>
+        <div className="flightData">
           <Flight
             id={flight.id}
             flightDate={flight.flight_date}

@@ -15,13 +15,12 @@ body{
     padding-top: 60vh;
     min-height: 40vh;
     min-width: auto;
-    font-family: 'Google Sans', sans-serif, system-ui;
 }
 
 :root {
-    --size: 120;
+    --size: 100;
     --coefficient: 1px;
-    --timeline: 4s;
+    --timeline: 3.9s;
     --rotation-y: 28;
     --rotation-x: -24;
     --color-one: #3a0ca3;
@@ -91,7 +90,7 @@ body{
     }
 
     90%,100% {
-        scale: 2 2 2;
+        scale: 8 5 5;
     }
 }
 
@@ -134,7 +133,7 @@ body{
     transform: 0;
   }
   100%{
-    transform: rotateX(0deg) !important;
+    transform: rotateX(0deg);
     transform: rotateY(0deg);
   }
 }
