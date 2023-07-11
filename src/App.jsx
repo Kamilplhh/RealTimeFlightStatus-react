@@ -6,28 +6,40 @@ export default function App() {
 
   if (loading) {
     return (
-    <div className="body">
-      <div className="scene">
-        <div className="shadow"></div>
-        <div className="jumper">
-          <div className="spinner">
-            <div className="scaler">
-              <div className="loader">
-                <div className="cuboid">
-                  <div className="cuboid__side"></div>
-                  <div className="cuboid__side"></div>
-                  <div className="cuboid__side"></div>
-                  <div className="cuboid__side"></div>
-                  <div className="cuboid__side"></div>
-                  <div className="cuboid__side"></div>
+      <div className="body">
+        <div className="scene">
+          <div className="shadow"></div>
+          <div className="jumper">
+            <div className="spinner">
+              <div className="scaler">
+                <div className="loader">
+                  <div className="cuboid">
+                    <div className="cuboid__side"></div>
+                    <div className="cuboid__side"></div>
+                    <div className="cuboid__side"></div>
+                    <div className="cuboid__side"></div>
+                    <div className="cuboid__side"></div>
+                    <div className="cuboid__side"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      </div> 
     );
+  }
+
+  function findFlight({ onSubmit }) {
+
+    function Submit(e) {
+    }
+
+    return (
+      <div className="form">
+
+      </div>
+    )
   }
 
   if (error) console.log(error);
@@ -42,6 +54,8 @@ export default function App() {
   )
 
   return (
+    <findFlight onSubmit={addTodo} />,
+
     <div>
       {flights.map(flight => (
         <div>
