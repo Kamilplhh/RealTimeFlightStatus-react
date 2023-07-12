@@ -1,18 +1,23 @@
 body {
-    background-color: #2a5b8a !important;
+    background-color: rgb(26, 52, 141) !important;
 }
 
-textarea:focus, input:focus, textarea:hover, input:hover{
-    border: 1px solid black;
+textarea:focus,
+input:focus,
+textarea:hover,
+input:hover,
+select:focus,
+select:hover {
     outline: none;
 }
 
 select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    cursor: pointer;
+    appearance: none;
     text-indent: 1px;
     text-overflow: '';
-  }
+    border: none;
+}
 
 .flightForm {
     padding-top: 5vh;
@@ -22,8 +27,23 @@ select {
 }
 
 .formRows {
+    border-radius: 2px;
+    border: none;
+    border-right: 1px solid black;
+    padding: 10px 38px;
+}
+
+.btn {
+    border-radius: 2px;
+    background-color: #4361ee;
     border: 1px solid black;
-    padding: 10px;
+    padding: 10px 20px;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgb(13, 72, 175);
 }
 
 .dataBlock {

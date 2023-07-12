@@ -69,7 +69,7 @@ export default function App() {
   const Flight = ({ id, flightDate, flightStatus, arrival, delay }) => (
     <div key={id}>
       <p>{flightDate}</p>
-      <p>{flightStatus}</p>
+      <p>{flightStatus} <span>&#9992;</span></p>
       <p>{arrival}</p>
       <p>{delay}</p>
     </div>
@@ -88,7 +88,7 @@ export default function App() {
               <option value={today}>{today}</option>
               <option value="test">test</option>
             </select>
-            <button className="btn">Add</button>
+            <button className="btn">Search Flight </button>
           </div>
         </form>
       </div>
