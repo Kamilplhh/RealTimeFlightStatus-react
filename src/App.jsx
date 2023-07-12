@@ -77,15 +77,17 @@ export default function App() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="flightForm">
-        <div className="formRows">
-          <input type="text" id="airLine" value={NewAirLine} autoComplete="off" onChange={e => setNewAirLine(e.target.value)} required />
-          <input type="text" id="flightNumber" value={NewFlightNumber} autoComplete="off" onChange={e => setNewFlightNumber(e.target.value)} required />
-          <input type="date" name="deadline" value={newDate} onChange={e => setNewDate(e.target.value)} id="date" min={today} />
-          <button className="btn">Add</button>
-        </div>
-
-      </form>
+      <div className="flightForm">
+        <img src="./img/plane.png" />
+        <form onSubmit={handleSubmit}>
+          <div className="formRows">
+            <input type="text" id="airLine" value={NewAirLine} autoComplete="off" onChange={e => setNewAirLine(e.target.value)} required />
+            <input type="text" id="flightNumber" value={NewFlightNumber} autoComplete="off" onChange={e => setNewFlightNumber(e.target.value)} required />
+            <input type="date" name="deadline" value={newDate} onChange={e => setNewDate(e.target.value)} id="date" min={today} />
+            <button className="btn">Add</button>
+          </div>
+        </form>
+      </div>
 
       {dataScreen()}
     </>
