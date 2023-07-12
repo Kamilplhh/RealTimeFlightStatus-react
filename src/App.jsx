@@ -9,30 +9,49 @@ export default function App() {
   const today = `${current.getFullYear()}-${('0' + (current.getMonth() + 1)).slice(-2)}-${('0' + current.getDate()).slice(-2)}`;
   const [newDate, setNewDate] = useState(today);
 
-  if (loading) {
-    return (
-      <div className="body">
-        <div className="scene">
-          <div className="shadow"></div>
-          <div className="jumper">
-            <div className="spinner">
-              <div className="scaler">
-                <div className="loader">
-                  <div className="cuboid">
-                    <div className="cuboid__side"></div>
-                    <div className="cuboid__side"></div>
-                    <div className="cuboid__side"></div>
-                    <div className="cuboid__side"></div>
-                    <div className="cuboid__side"></div>
-                    <div className="cuboid__side"></div>
+  function dataScreen() {
+    if (loading) {
+      return (
+        <div className="body">
+          <div className="scene">
+            <div className="shadow"></div>
+            <div className="jumper">
+              <div className="spinner">
+                <div className="scaler">
+                  <div className="loader">
+                    <div className="cuboid">
+                      <div className="cuboid__side"></div>
+                      <div className="cuboid__side"></div>
+                      <div className="cuboid__side"></div>
+                      <div className="cuboid__side"></div>
+                      <div className="cuboid__side"></div>
+                      <div className="cuboid__side"></div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="dataBlock">
+          {flights.map(flight => (
+            <div className="flightData">
+              <Flight
+                id={flight.id}
+                flightDate={flight.flight_date}
+                flightStatus={flight.flight_status}
+                arrival={flight.arrival.scheduled}
+                delay={flight.departure.delay}
+              />
+            </div>
+          ))
+          }
+        </div>
+      )
+    }
   }
 
   function handleSubmit(e) {
@@ -68,20 +87,7 @@ export default function App() {
 
       </form>
 
-      <div className="dataBlock">
-        {flights.map(flight => (
-          <div className="flightData">
-            <Flight
-              id={flight.id}
-              flightDate={flight.flight_date}
-              flightStatus={flight.flight_status}
-              arrival={flight.arrival.scheduled}
-              delay={flight.departure.delay}
-            />
-          </div>
-        ))
-        }
-      </div>
+      {dataScreen()}
     </>
   )
 }
