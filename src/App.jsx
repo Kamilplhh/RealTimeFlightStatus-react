@@ -7,6 +7,7 @@ export default function App() {
   const [NewFlightNumber, setNewFlightNumber] = useState("");
   const current = new Date();
   const today = `${current.getFullYear()}-${('0' + (current.getMonth() + 1)).slice(-2)}-${('0' + current.getDate()).slice(-2)}`;
+  const tomorrow = `${current.getFullYear()}-${('0' + (current.getMonth() + 1)).slice(-2)}-${('0' + (current.getDate() + 1)).slice(-2)}`;
   const [newDate, setNewDate] = useState(today);
 
   function dataScreen() {
@@ -84,11 +85,11 @@ export default function App() {
             <input type="text" id="airLine" className="formRows" value={NewAirLine} autoComplete="off" placeholder="Airline (e.g United Airlines)" onChange={e => setNewAirLine(e.target.value)} required />
             <input type="text" id="flightNumber" className="formRows" value={NewFlightNumber} autoComplete="off" placeholder="Flight Number (e.g. UA2402)" onChange={e => setNewFlightNumber(e.target.value)} required />
             <select id="date" className="formRows" onChange={e => setNewDate(e.target.value)} required>
-            <option value="" disabled selected>Choose your date</option>
-              <option value={today}>{today}</option>
-              <option value="test">test</option>
+              <option value="" disabled selected>Choose your date</option>
+              <option value={today}>Today</option>
+              <option value={tomorrow}>Tomorrow</option>
             </select>
-            <button className="btn">Search Flight </button>
+            <button className="btn">Search Flight</button>
           </div>
         </form>
       </div>
