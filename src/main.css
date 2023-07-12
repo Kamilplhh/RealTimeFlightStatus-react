@@ -1,6 +1,18 @@
 body {
-    background-color: #094e8f !important;
+    background-color: #2a5b8a !important;
 }
+
+textarea:focus, input:focus, textarea:hover, input:hover{
+    border: 1px solid black;
+    outline: none;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+  }
 
 .flightForm {
     padding-top: 5vh;
@@ -9,13 +21,17 @@ body {
     width: auto;
 }
 
+.formRows {
+    border: 1px solid black;
+    padding: 10px;
+}
 
-
-.dataBlock{
+.dataBlock {
+    position: relative;
     display: grid;
     place-items: center;
-    padding-top: 29vh;
-    height: 40vh;
+    padding-top: 8.4vh;
+    height: 50vh;
     min-width: auto;
 }
 

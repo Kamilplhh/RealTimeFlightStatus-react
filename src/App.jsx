@@ -80,10 +80,14 @@ export default function App() {
       <div className="flightForm">
         <img src="./img/plane.png" />
         <form onSubmit={handleSubmit}>
-          <div className="formRows">
-            <input type="text" id="airLine" value={NewAirLine} autoComplete="off" onChange={e => setNewAirLine(e.target.value)} required />
-            <input type="text" id="flightNumber" value={NewFlightNumber} autoComplete="off" onChange={e => setNewFlightNumber(e.target.value)} required />
-            <input type="date" name="deadline" value={newDate} onChange={e => setNewDate(e.target.value)} id="date" min={today} />
+          <div>
+            <input type="text" id="airLine" className="formRows" value={NewAirLine} autoComplete="off" placeholder="Airline (e.g United Airlines)" onChange={e => setNewAirLine(e.target.value)} required />
+            <input type="text" id="flightNumber" className="formRows" value={NewFlightNumber} autoComplete="off" placeholder="Flight Number (e.g. UA2402)" onChange={e => setNewFlightNumber(e.target.value)} required />
+            <select id="date" className="formRows" onChange={e => setNewDate(e.target.value)} required>
+            <option value="" disabled selected>Choose your date</option>
+              <option value={today}>{today}</option>
+              <option value="test">test</option>
+            </select>
             <button className="btn">Add</button>
           </div>
         </form>

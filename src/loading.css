@@ -12,7 +12,7 @@ body{
 .body {
     display: grid;
     place-items: center;
-    padding-top: 50vh;
+    padding-top: 20vh;
     min-height: 50vh;
     min-width: auto;
 }
