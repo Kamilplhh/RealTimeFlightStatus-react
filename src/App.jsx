@@ -187,7 +187,7 @@ export default function App() {
             </div>
           </div>
           <div className="footer">
-
+            Departure Timezone: America/Los_Angeles • Arrival Timezone: America/New_York
           </div>
         </div>
       </div>
