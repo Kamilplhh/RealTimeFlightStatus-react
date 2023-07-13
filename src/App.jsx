@@ -121,7 +121,18 @@ export default function App() {
               </p>
             </div>
           </div>
+          <div className="centerData">
+            <div className="left">
 
+            </div>
+
+            <div className="right">
+
+            </div>
+          </div>
+          <div className="footer">
+
+          </div>
         </div>
       </div>
     </>

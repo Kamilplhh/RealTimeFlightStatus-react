@@ -62,7 +62,9 @@ select {
 }
 
 .top {
-    background-color: rgb(247, 247, 200);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+    color: white;
+    background-color: rgb(38, 24, 158);
     width: 100%;
     height: 15%;
     display: flex;
@@ -72,6 +74,7 @@ select {
     align-items: flex-start;
     align-content: flex-start;
     font-size: 18px;
+    border-bottom: 1px solid black;
 }
 
 .flightNumber,
@@ -112,4 +115,30 @@ select {
 
 .midData {
     text-align: center;
+}
+
+.centerData {
+    height: 75%; 
+    width: 100%;
+}
+
+.left, .right {
+    width: 50%;
+    height: 100%;
+}
+
+.left {
+    float: left;
+    border-right: 1px solid black;
+}
+
+.right {
+    border-left: 1px solid black;
+    float: left;
+}
+
+.footer {
+    border-top: 1px solid black;
+    height: 10%;
+    width: 100%;
 }
