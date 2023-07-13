@@ -10,50 +10,50 @@ export default function App() {
   const tomorrow = `${current.getFullYear()}-${('0' + (current.getMonth() + 1)).slice(-2)}-${('0' + (current.getDate() + 1)).slice(-2)}`;
   const [newDate, setNewDate] = useState(today);
 
-  function dataScreen() {
-    if (loading) {
-      return (
-        <div className="body">
-          <div className="scene">
-            <div className="shadow"></div>
-            <div className="jumper">
-              <div className="spinner">
-                <div className="scaler">
-                  <div className="loader">
-                    <div className="cuboid">
-                      <div className="cuboid__side"></div>
-                      <div className="cuboid__side"></div>
-                      <div className="cuboid__side"></div>
-                      <div className="cuboid__side"></div>
-                      <div className="cuboid__side"></div>
-                      <div className="cuboid__side"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    } else {
-      return (
-        <div className="dataBlock">
-          {flights.map(flight => (
-            <div className="flightData">
-              <Flight
-                id={flight.id}
-                flightDate={flight.flight_date}
-                flightStatus={flight.flight_status}
-                arrival={flight.arrival.scheduled}
-                delay={flight.departure.delay}
-              />
-            </div>
-          ))
-          }
-        </div>
-      )
-    }
-  }
+  // function dataScreen() {
+  //   if (loading) {
+  //     return (
+  //       <div className="body">
+  //         <div className="scene">
+  //           <div className="shadow"></div>
+  //           <div className="jumper">
+  //             <div className="spinner">
+  //               <div className="scaler">
+  //                 <div className="loader">
+  //                   <div className="cuboid">
+  //                     <div className="cuboid__side"></div>
+  //                     <div className="cuboid__side"></div>
+  //                     <div className="cuboid__side"></div>
+  //                     <div className="cuboid__side"></div>
+  //                     <div className="cuboid__side"></div>
+  //                     <div className="cuboid__side"></div>
+  //                   </div>
+  //                 </div>
+  //               </div>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     );
+  //   } else {
+  //     return (
+  //       <div className="dataBlock">
+  //         {flights.map(flight => (
+  //           <div className="flightData">
+  //             <Flight
+  //               id={flight.id}
+  //               flightDate={flight.flight_date}
+  //               flightStatus={flight.flight_status}
+  //               arrival={flight.arrival.scheduled}
+  //               delay={flight.departure.delay}
+  //             />
+  //           </div>
+  //         ))
+  //         }
+  //       </div>
+  //     )
+  //   }
+  // }
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -70,7 +70,7 @@ export default function App() {
   const Flight = ({ id, flightDate, flightStatus, arrival, delay }) => (
     <div key={id}>
       <p>{flightDate}</p>
-      <p>{flightStatus} <span>&#9992;</span></p>
+      <p>{flightStatus} </p>
       <p>{arrival}</p>
       <p>{delay}</p>
     </div>
@@ -78,7 +78,7 @@ export default function App() {
 
   return (
     <>
-      <div className="flightForm">
+      {/* <div className="flightForm">
         <img src="./img/plane.png" />
         <form onSubmit={handleSubmit}>
           <div>
@@ -94,7 +94,36 @@ export default function App() {
         </form>
       </div>
 
-      {dataScreen()}
+      {dataScreen()} */}
+
+      <div className="dataBlock">
+        <div className="flightData">
+          <div className="top">
+            <p className="flightNumber">
+              <h1>UA2402</h1> <br />
+              United Airlinies
+            </p>
+            <div className="mid">
+              <p className="midData">
+                <h1>Lax</h1> <br />
+                Los Angeles Int.
+              </p>
+              <span>&#9992;</span>
+              <p className="midData">
+                <h1>BOS</h1> <br />
+                Logan Int.
+              </p>
+            </div>
+            <div className="status">
+              <p className="statusData">
+                <h1>Airborne</h1> <br />
+                Late
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </>
   )
 }

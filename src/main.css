@@ -60,3 +60,56 @@ select {
     height: 500px;
     background-color: #4361ee;
 }
+
+.top {
+    background-color: rgb(247, 247, 200);
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    font-size: 18px;
+}
+
+.flightNumber,
+.status {
+    padding-left: 10px;
+    height: 100%;
+}
+
+.flightNumber>h1,
+.statusData>h1,
+.midData>h1 {
+    line-height: 0px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: -9px !important;
+}
+
+.status {
+    padding-top: 10px;
+    background-color: red;
+    width: 25%;
+}
+
+.mid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+}
+
+.mid > span {
+    padding: 0 20px;
+    font-size: 35px;
+}
+
+.midData {
+    text-align: center;
+}
