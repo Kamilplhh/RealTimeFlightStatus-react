@@ -123,11 +123,67 @@ export default function App() {
           </div>
           <div className="centerData">
             <div className="left">
-
+              <p className="departure">Departure</p>
+              <p className="iata"><h1>Los Angeles International</h1><br />
+                IATA:LAX • ICAO:KLAX</p>
+              <div className="timer">
+                <table>
+                  <tr>
+                    <th>Scheduled <br />
+                      2020-11-29 20:00:00</th>
+                    <th>Estimated <br />
+                      2020-11-29 20:00:00</th>
+                  </tr>
+                  <tr>
+                    <th>Actual <br />
+                      2020-11-29 20:00:00</th>
+                    <th>Runway <br />
+                      2020-11-29 20:00:00</th>
+                  </tr>
+                </table>
+              </div>
+              <div className="terminal">
+                <div>
+                  <p className="tName">Terminal</p>
+                  <p className="tNumber">2</p>
+                </div>
+                <div>
+                  <p className="tName">Gate</p>
+                  <p className="tNumber">57</p>
+                </div>
+              </div>
             </div>
 
             <div className="right">
-
+              <p className="departure">Arrival</p>
+              <p className="iata"><h1>Logan International</h1><br />
+                IATA:BOS • ICAO:KBOS</p>
+              <div className="timer">
+                <table>
+                  <tr>
+                    <th>Scheduled <br />
+                      2020-11-29 20:00:00</th>
+                    <th>Estimated <br />
+                      2020-11-29 20:00:00</th>
+                  </tr>
+                  <tr>
+                    <th>Actual <br />
+                      2020-11-29 20:00:00</th>
+                    <th>Runway <br />
+                      2020-11-29 20:00:00</th>
+                  </tr>
+                </table>
+              </div>
+              <div className="terminal">
+                <div>
+                  <p className="tName">Terminal</p>
+                  <p className="tNumber">2</p>
+                </div>
+                <div>
+                  <p className="tName">Gate</p>
+                  <p className="tNumber">57</p>
+                </div>
+              </div>
             </div>
           </div>
           <div className="footer">

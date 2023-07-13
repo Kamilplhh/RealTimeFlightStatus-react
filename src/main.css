@@ -108,7 +108,7 @@ select {
     align-content: flex-start;
 }
 
-.mid > span {
+.mid>span {
     padding: 0 20px;
     font-size: 35px;
 }
@@ -118,13 +118,32 @@ select {
 }
 
 .centerData {
-    height: 75%; 
+    height: 78%;
     width: 100%;
 }
 
-.left, .right {
+.left,
+.right {
     width: 50%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.iata >h1 {
+    line-height: 0px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: -3px;
+}
+
+.iata {
+    text-align: center;
+    letter-spacing: 1.4px;
 }
 
 .left {
@@ -137,8 +156,69 @@ select {
     float: left;
 }
 
+.departure {
+    text-align: center;
+    padding-top: 2px;
+    background-color: rgb(38, 24, 158);
+    color: aliceblue;
+    height: 25px;
+    width: 100px;
+    border-radius: 20px;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+    color: rgb(217, 217, 218);
+    text-align: center;
+    height: 70px;
+    width: 160px;
+    background-color: rgb(38, 24, 158);
+    border: 1px solid black;
+}
+
+.terminal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.terminal >div {
+    display: flex;
+    flex-direction: row;
+    width: 120px;
+    height: 25px;
+    border: 3px solid #7393B3;
+    background-color: #7393B3;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tName, .tNumber {
+    height: 100%;   
+}
+
+.tName {
+    width: 70px;
+}
+
+.tNumber {
+    background-color: #dadbdd;
+    width: 50px;
+    text-align: center;
+    border-radius: 2px;
+}
+
 .footer {
     border-top: 1px solid black;
-    height: 10%;
+    height: 7%;
     width: 100%;
 }
