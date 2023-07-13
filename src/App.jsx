@@ -78,7 +78,7 @@ export default function App() {
 
   return (
     <>
-      {/* <div className="flightForm">
+      <div className="flightForm">
         <img src="./img/plane.png" />
         <form onSubmit={handleSubmit}>
           <div>
@@ -94,7 +94,7 @@ export default function App() {
         </form>
       </div>
 
-      {dataScreen()} */}
+      {/* {dataScreen()} */}
 
       <div className="dataBlock">
         <div className="flightData">
