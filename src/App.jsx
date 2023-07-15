@@ -97,22 +97,22 @@ export default function App() {
     <div className="dataBlock" key={id}>
       <div className="flightData">
         <div className="top">
-          <span className="flightNumber" key={id}>
-            <h1 key={id}>{number}</h1> <br />
+          <span className="flightNumber">
+            <h1>{number}</h1> <br />
             {airlaneName}
           </span>
           <div className="mid">
-            <h1><span className="midData" key={id}>
+            <h1><span className="midData">
               {departureIata}
             </span></h1>
             <span>&#9992;</span>
-            <h1><span className="midData" key={id}>
+            <h1><span className="midData">
               {arrivalIata}
             </span></h1>
           </div>
           <div className="status" style={{backgroundColor: color}}>
-            <span className="statusData" key={id}>
-              <h1 key={id}>{flightStatus}</h1> <br />
+            <span className="statusData">
+              <h1>{flightStatus}</h1> <br />
               {delayA}
             </span>
           </div>
@@ -120,7 +120,7 @@ export default function App() {
         <div className="centerData">
           <div className="left">
             <p className="departure">Departure</p>
-            <span className="iata" key={id}><h1 key={id}>{departureAirport}</h1><br />
+            <span className="iata" ><h1>{departureAirport}</h1><br />
               IATA:{departureIata} • ICAO:{departureIcao}</span>
             <div className="timer">
               <table>
@@ -143,18 +143,18 @@ export default function App() {
             <div className="terminal">
               <div>
                 <p className="tName">Terminal</p>
-                <p className="tNumber" key={id}>{departureTerminal}</p>
+                <p className="tNumber">{departureTerminal}</p>
               </div>
               <div>
                 <p className="tName">Gate</p>
-                <p className="tNumber" key={id}>{departureGate}</p>
+                <p className="tNumber">{departureGate}</p>
               </div>
             </div>
           </div>
 
           <div className="right">
             <p className="departure">Arrival</p>
-            <span className="iata" key={id}><h1 key={id}>{arrivalAirport}</h1><br />
+            <span className="iata"><h1>{arrivalAirport}</h1><br />
               IATA:{arrivalIata} • ICAO:{arrivalIcao}</span>
             <div className="timer">
               <table>
@@ -177,16 +177,16 @@ export default function App() {
             <div className="terminal">
               <div>
                 <p className="tName">Terminal</p>
-                <p className="tNumber" key={id}>{arrivalTerminal}</p>
+                <p className="tNumber">{arrivalTerminal}</p>
               </div>
               <div>
                 <p className="tName">Gate</p>
-                <p className="tNumber" key={id}>{arrivalGate}</p>
+                <p className="tNumber">{arrivalGate}</p>
               </div>
             </div>
           </div>
         </div>
-        <div className="footer" key={id}>
+        <div className="footer">
           Departure Timezone: {departureTimeZone} • Arrival Timezone: {arrivalTimeZone}
         </div>
       </div>
