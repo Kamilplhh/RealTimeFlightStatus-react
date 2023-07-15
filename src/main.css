@@ -64,6 +64,20 @@ select {
     background-color: #4361ee;
 }
 
+.flightData > * {
+    animation: fadeIn .5s ease-in 0s;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
 .top {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
     color: white;
