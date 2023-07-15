@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(26, 52, 141) !important;
+    background-color: #c2c3ca !important;
 }
 
 textarea:focus,
@@ -49,6 +49,22 @@ select {
     background-color: rgb(13, 72, 175);
 }
 
+.bgPlane {
+    position: absolute;
+    z-index: 0;
+    background-color: aliceblue;
+    width: 100vw;
+    height: 66vh;
+    margin-left: -8px;
+    margin-top: 20px;
+    background-image: url("./img/planeBG.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-filter: grayscale(40%) blur(3px);
+    filter: grayscale(40%) blur(3px);
+}
+
 .dataBlock {
     position: relative;
     display: grid;
@@ -56,6 +72,11 @@ select {
     padding-top: 8.4vh;
     height: 50vh;
     min-width: auto;
+    z-index: 10;
+}
+
+.dataBlock>* {
+    z-index: 10;
 }
 
 .flightData {
@@ -64,18 +85,18 @@ select {
     background-color: #4361ee;
 }
 
-.flightData > * {
+.flightData>* {
     animation: fadeIn .5s ease-in 0s;
 }
 
 @keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
+    0% {
+        opacity: 0;
+    }
 
-	100% {
-		opacity: 1;
-	}
+    100% {
+        opacity: 1;
+    }
 }
 
 .top {
@@ -152,7 +173,7 @@ select {
     align-items: center;
 }
 
-.iata >h1 {
+.iata>h1 {
     line-height: 0px;
     font-weight: bold;
     font-size: 20px;
@@ -208,7 +229,7 @@ th {
     margin-top: 20px;
 }
 
-.terminal >div {
+.terminal>div {
     display: flex;
     flex-direction: row;
     width: 120px;
@@ -221,8 +242,9 @@ th {
     align-items: center;
 }
 
-.tName, .tNumber {
-    height: 100%;   
+.tName,
+.tNumber {
+    height: 100%;
 }
 
 .tName {
