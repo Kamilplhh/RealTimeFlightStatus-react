@@ -79,45 +79,47 @@ export default function App() {
     <div className="dataBlock" key={id}>
       <div className="flightData">
         <div className="top">
-          <p className="flightNumber">
+          <span className="flightNumber">
             <h1>{number}</h1> <br />
             {airlaneName}
-          </p>
+          </span>
           <div className="mid">
-            <p className="midData">
-              <h1>{departureIata}</h1>
-            </p>
+            <h1><span className="midData">
+              {departureIata}
+            </span></h1>
             <span>&#9992;</span>
-            <p className="midData">
-              <h1>{arrivalIata}</h1>
-            </p>
+            <h1><span className="midData">
+              {arrivalIata}
+            </span></h1>
           </div>
           <div className="status">
-            <p className="statusData">
+            <span className="statusData">
               <h1>Airborne</h1> <br />
               Late
-            </p>
+            </span>
           </div>
         </div>
         <div className="centerData">
           <div className="left">
             <p className="departure">Departure</p>
-            <p className="iata"><h1>{departureAirport}</h1><br />
-              IATA:{departureIata} • ICAO:{departureIcao}</p>
+            <span className="iata"><h1>{departureAirport}</h1><br />
+              IATA:{departureIata} • ICAO:{departureIcao}</span>
             <div className="timer">
               <table>
-                <tr>
-                  <th>Scheduled <br />
-                    2020-11-29 20:00:00</th>
-                  <th>Estimated <br />
-                    2020-11-29 20:00:00</th>
-                </tr>
-                <tr>
-                  <th>Actual <br />
-                    2020-11-29 20:00:00</th>
-                  <th>Runway <br />
-                    2020-11-29 20:00:00</th>
-                </tr>
+                <tbody>
+                  <tr>
+                    <th>Scheduled <br />
+                      2020-11-29 20:00:00</th>
+                    <th>Estimated <br />
+                      2020-11-29 20:00:00</th>
+                  </tr>
+                  <tr>
+                    <th>Actual <br />
+                      2020-11-29 20:00:00</th>
+                    <th>Runway <br />
+                      2020-11-29 20:00:00</th>
+                  </tr>
+                </tbody>
               </table>
             </div>
             <div className="terminal">
@@ -134,22 +136,24 @@ export default function App() {
 
           <div className="right">
             <p className="departure">Arrival</p>
-            <p className="iata"><h1>{arrivalAirport}</h1><br />
-              IATA:{arrivalIata} • ICAO:{arrivalIcao}</p>
+            <span className="iata"><h1>{arrivalAirport}</h1><br />
+              IATA:{arrivalIata} • ICAO:{arrivalIcao}</span>
             <div className="timer">
               <table>
-                <tr>
-                  <th>Scheduled <br />
-                    2020-11-29 20:00:00</th>
-                  <th>Estimated <br />
-                    2020-11-29 20:00:00</th>
-                </tr>
-                <tr>
-                  <th>Actual <br />
-                    2020-11-29 20:00:00</th>
-                  <th>Runway <br />
-                    2020-11-29 20:00:00</th>
-                </tr>
+                <tbody>
+                  <tr>
+                    <th>Scheduled <br />
+                      2020-11-29 20:00:00</th>
+                    <th>Estimated <br />
+                      2020-11-29 20:00:00</th>
+                  </tr>
+                  <tr>
+                    <th>Actual <br />
+                      2020-11-29 20:00:00</th>
+                    <th>Runway <br />
+                      2020-11-29 20:00:00</th>
+                  </tr>
+                </tbody>
               </table>
             </div>
             <div className="terminal">

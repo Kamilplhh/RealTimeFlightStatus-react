@@ -96,6 +96,9 @@ select {
 
 .flightNumber,
 .status {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     padding-left: 10px;
     height: 100%;
 }
@@ -111,7 +114,6 @@ select {
 }
 
 .status {
-    padding-top: 10px;
     background-color: red;
     width: 25%;
 }
