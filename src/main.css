@@ -122,7 +122,8 @@ select {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    align-content: flex-start;
+    align-content: center;
+    height: 100%;
 }
 
 .mid>span {

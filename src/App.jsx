@@ -39,10 +39,23 @@ export default function App() {
       return (
         <>
           {flights.map(flight => (
-              <Flight
-                id={flight.id}
-                
-              />
+            <Flight
+              id={flight.id}
+              number={flight.flight.iata}
+              airlaneName={flight.airline.name}
+              departureIata={flight.departure.iata}
+              departureIcao={flight.departure.icao}
+              arrivalIata={flight.arrival.iata}
+              arrivalIcao={flight.arrival.icao}
+              departureAirport={flight.departure.airport}
+              arrivalAirport={flight.arrival.airport}
+              departureTerminal={flight.departure.terminal}
+              departureGate={flight.departure.gate}
+              arrivalTerminal={flight.arrival.terminal}
+              arrivalGate={flight.arrival.gate}
+              departureTimeZone={flight.departure.timezone}
+              arrivalTimeZone={flight.arrival.timezone}
+            />
           ))
           }
         </>
@@ -62,23 +75,21 @@ export default function App() {
 
   if (error) console.log(error);
 
-  const Flight = ({ id,  }) => (
+  const Flight = ({ id, number, airlaneName, departureIata, departureIcao, arrivalIata, arrivalIcao, departureAirport, arrivalAirport, departureTerminal, departureGate, arrivalTerminal, arrivalGate, departureTimeZone, arrivalTimeZone }) => (
     <div className="dataBlock" key={id}>
       <div className="flightData">
         <div className="top">
           <p className="flightNumber">
-            <h1>UA2402</h1> <br />
-            United Airlinies
+            <h1>{number}</h1> <br />
+            {airlaneName}
           </p>
           <div className="mid">
             <p className="midData">
-              <h1>Lax</h1> <br />
-              Los Angeles Int.
+              <h1>{departureIata}</h1>
             </p>
             <span>&#9992;</span>
             <p className="midData">
-              <h1>BOS</h1> <br />
-              Logan Int.
+              <h1>{arrivalIata}</h1>
             </p>
           </div>
           <div className="status">
@@ -91,8 +102,8 @@ export default function App() {
         <div className="centerData">
           <div className="left">
             <p className="departure">Departure</p>
-            <p className="iata"><h1>Los Angeles International</h1><br />
-              IATA:LAX • ICAO:KLAX</p>
+            <p className="iata"><h1>{departureAirport}</h1><br />
+              IATA:{departureIata} • ICAO:{departureIcao}</p>
             <div className="timer">
               <table>
                 <tr>
@@ -112,19 +123,19 @@ export default function App() {
             <div className="terminal">
               <div>
                 <p className="tName">Terminal</p>
-                <p className="tNumber">2</p>
+                <p className="tNumber">{departureTerminal}</p>
               </div>
               <div>
                 <p className="tName">Gate</p>
-                <p className="tNumber">57</p>
+                <p className="tNumber">{departureGate}</p>
               </div>
             </div>
           </div>
 
           <div className="right">
             <p className="departure">Arrival</p>
-            <p className="iata"><h1>Logan International</h1><br />
-              IATA:BOS • ICAO:KBOS</p>
+            <p className="iata"><h1>{arrivalAirport}</h1><br />
+              IATA:{arrivalIata} • ICAO:{arrivalIcao}</p>
             <div className="timer">
               <table>
                 <tr>
@@ -144,17 +155,17 @@ export default function App() {
             <div className="terminal">
               <div>
                 <p className="tName">Terminal</p>
-                <p className="tNumber">2</p>
+                <p className="tNumber">{arrivalTerminal}</p>
               </div>
               <div>
                 <p className="tName">Gate</p>
-                <p className="tNumber">57</p>
+                <p className="tNumber">{arrivalGate}</p>
               </div>
             </div>
           </div>
         </div>
         <div className="footer">
-          Departure Timezone: America/Los_Angeles • Arrival Timezone: America/New_York
+          Departure Timezone: {departureTimeZone} • Arrival Timezone: {arrivalTimeZone}
         </div>
       </div>
     </div>
@@ -169,7 +180,6 @@ export default function App() {
             <input type="text" id="airLine" className="formRows" value={NewAirLine} autoComplete="off" placeholder="Airline (e.g United Airlines)" onChange={e => setNewAirLine(e.target.value)} required />
             <input type="text" id="flightNumber" className="formRows" value={NewFlightNumber} autoComplete="off" placeholder="Flight Number (e.g. UA2402)" onChange={e => setNewFlightNumber(e.target.value)} required />
             <select id="date" className="formRows" onChange={e => setNewDate(e.target.value)} required>
-              <option value="" disabled selected>Choose your date</option>
               <option value={today}>Today</option>
               <option value={tomorrow}>Tomorrow</option>
             </select>
