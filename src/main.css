@@ -20,13 +20,13 @@ select {
 }
 
 .flightForm {
-    padding-top: 5vh;
     display: grid;
     place-items: center;
     width: auto;
 }
 
 .formRows {
+    margin: 1vh 0;
     border-radius: 2px;
     border: none;
     border-right: 1px solid black;
@@ -35,7 +35,7 @@ select {
 
 .btn {
     border-radius: 2px;
-    background-color: #4361ee;
+    background-color: #726f6f;
     border: 1px solid black;
     padding: 10px 20px;
     transition: 0.2s ease-in;
@@ -46,7 +46,7 @@ select {
 }
 
 .btn:hover {
-    background-color: rgb(13, 72, 175);
+    background-color: rgb(23, 179, 106);
 }
 
 .bgPlane {
@@ -55,7 +55,7 @@ select {
     background-color: aliceblue;
     width: 100vw;
     height: 66vh;
-    margin-left: -8px;
+    margin-left: -9px;
     margin-top: 20px;
     background-image: url("./img/planeBG.jpg");
     background-position: center;
@@ -82,7 +82,7 @@ select {
 .flightData {
     width: 800px;
     height: 500px;
-    background-color: #4361ee;
+    background-color: #919297;
 }
 
 .flightData>* {
@@ -102,7 +102,7 @@ select {
 .top {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
     color: white;
-    background-color: rgb(38, 24, 158);
+    background-color: #666569;
     width: 100%;
     height: 15%;
     display: flex;
@@ -199,7 +199,7 @@ select {
 .departure {
     text-align: center;
     padding-top: 2px;
-    background-color: rgb(38, 24, 158);
+    background-color: #38373b;
     color: aliceblue;
     height: 25px;
     width: 100px;
@@ -216,7 +216,7 @@ th {
     text-align: center;
     height: 70px;
     width: 160px;
-    background-color: rgb(38, 24, 158);
+    background-color: #666569;
     border: 1px solid black;
 }
 
@@ -230,12 +230,13 @@ th {
 }
 
 .terminal>div {
+    color: aliceblue;
     display: flex;
     flex-direction: row;
     width: 120px;
     height: 25px;
-    border: 3px solid #7393B3;
-    background-color: #7393B3;
+    border: 3px solid #38373b;
+    background-color: #38373b;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -252,14 +253,15 @@ th {
 }
 
 .tNumber {
-    background-color: #dadbdd;
+    color: black;
+    background-color: #b4b6b9;
     width: 50px;
     text-align: center;
     border-radius: 2px;
 }
 
 .footer {
-    background-color: rgb(53, 38, 187);
+    background-color: #666569;
     border-top: 1px solid black;
     height: 7%;
     width: 100%;
@@ -270,4 +272,8 @@ th {
     padding-left: 10px;
     color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+}
+
+.dot {
+    padding: 0 1rem;
 }

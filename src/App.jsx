@@ -187,7 +187,11 @@ export default function App() {
           </div>
         </div>
         <div className="footer">
-          Departure Timezone: {departureTimeZone} • Arrival Timezone: {arrivalTimeZone}
+          Departure Timezone: {departureTimeZone} 
+          <p className="dot">
+          • 
+          </p>   
+          Arrival Timezone: {arrivalTimeZone}
         </div>
       </div>
     </div>
