@@ -15,7 +15,7 @@ function useFetch(url) {
         }).catch((err) => {
             setError(err);
         }).finally(() => {  
-            const timer = setTimeout(() => setLoading(false),3600);     
+            const timer = setTimeout(() => setLoading(false),3250);     
             
             return () => clearTimeout(timer);
         });
