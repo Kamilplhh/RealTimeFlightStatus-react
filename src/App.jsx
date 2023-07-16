@@ -40,26 +40,28 @@ export default function App() {
         <>
           {flights.map(flight => {
             return (
-            <Flight
-              id={flight.uniqueId}
-              number={flight.flight.iata}
-              airlaneName={flight.airline.name}
-              departureIata={flight.departure.iata}
-              departureIcao={flight.departure.icao}
-              arrivalIata={flight.arrival.iata}
-              arrivalIcao={flight.arrival.icao}
-              departureAirport={flight.departure.airport}
-              arrivalAirport={flight.arrival.airport}
-              departureTerminal={flight.departure.terminal}
-              departureGate={flight.departure.gate}
-              arrivalTerminal={flight.arrival.terminal}
-              arrivalGate={flight.arrival.gate}
-              departureTimeZone={flight.departure.timezone}
-              arrivalTimeZone={flight.arrival.timezone}
-              flightStatus={flight.live.is_ground}
-              delayD={flight.departure.delay}
-              delayA={flight.arrival.delay}
-            />
+              <Flight
+                id={flight.uniqueId}
+                number={flight.flight.iata}
+                airlaneName={flight.airline.name}
+                departureIata={flight.departure.iata}
+                departureIcao={flight.departure.icao}
+                arrivalIata={flight.arrival.iata}
+                arrivalIcao={flight.arrival.icao}
+                departureAirport={flight.departure.airport}
+                arrivalAirport={flight.arrival.airport}
+                departureTerminal={flight.departure.terminal}
+                departureGate={flight.departure.gate}
+                arrivalTerminal={flight.arrival.terminal}
+                arrivalGate={flight.arrival.gate}
+                departureTimeZone={flight.departure.timezone}
+                arrivalTimeZone={flight.arrival.timezone}
+                flightStatus={flight.live.is_ground}
+                delayD={flight.departure.delay}
+                delayA={flight.arrival.delay}
+                latitude={flight.live.latitude}
+                longitude={flight.live.longitude}
+              />
             )
           })
           }
@@ -80,122 +82,133 @@ export default function App() {
 
   if (error) console.log(error);
 
-  const Flight = ({ id, number, airlaneName, departureIata, departureIcao, arrivalIata, arrivalIcao, departureAirport, arrivalAirport, departureTerminal, departureGate, arrivalTerminal, arrivalGate, departureTimeZone, arrivalTimeZone, flightStatus, delayD, delayA, color }) => {
-    if(flightStatus === false){
+  const Flight = ({ id, number, airlaneName, departureIata, departureIcao, arrivalIata, arrivalIcao, departureAirport, arrivalAirport, departureTerminal, departureGate, arrivalTerminal, arrivalGate, departureTimeZone, arrivalTimeZone, flightStatus, delayD, delayA, color, latitude, longitude }) => {
+    if (flightStatus === false) {
       flightStatus = "Airborne";
-    }else {
+    } else {
       flightStatus = "Grounded";
     }
-    if((delayA + delayD) > 0){
+    if ((delayA + delayD) > 0) {
       color = "red";
       delayA = "Late"
-    }else {
+    } else {
       color = "green";
       delayA = "On time"
     }
     return (
-    <div className="dataBlock" key={id}>
-      <div className="flightData">
-        <div className="top">
-          <span className="flightNumber">
-            <h1>{number}</h1> <br />
-            {airlaneName}
-          </span>
-          <div className="mid">
-            <h1><span className="midData">
-              {departureIata}
-            </span></h1>
-            <span>&#9992;</span>
-            <h1><span className="midData">
-              {arrivalIata}
-            </span></h1>
-          </div>
-          <div className="status" style={{backgroundColor: color}}>
-            <span className="statusData">
-              <h1>{flightStatus}</h1> <br />
-              {delayA}
-            </span>
-          </div>
-        </div>
-        <div className="centerData">
-          <div className="left">
-            <p className="departure">Departure</p>
-            <span className="iata" ><h1>{departureAirport}</h1><br />
-              IATA:{departureIata} • ICAO:{departureIcao}</span>
-            <div className="timer">
-              <table>
-                <tbody>
-                  <tr>
-                    <th>Scheduled <br />
-                      2020-11-29 20:00:00</th>
-                    <th>Estimated <br />
-                      2020-11-29 20:00:00</th>
-                  </tr>
-                  <tr>
-                    <th>Actual <br />
-                      2020-11-29 20:00:00</th>
-                    <th>Runway <br />
-                      2020-11-29 20:00:00</th>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="terminal">
-              <div>
-                <p className="tName">Terminal</p>
-                <p className="tNumber">{departureTerminal}</p>
+      <>
+        <div className="dataBlock" key={id}>
+          <div className="flightData">
+            <div className="top">
+              <span className="flightNumber">
+                <h1>{number}</h1> <br />
+                {airlaneName}
+              </span>
+              <div className="mid">
+                <h1><span className="midData">
+                  {departureIata}
+                </span></h1>
+                <span>&#9992;</span>
+                <h1><span className="midData">
+                  {arrivalIata}
+                </span></h1>
               </div>
-              <div>
-                <p className="tName">Gate</p>
-                <p className="tNumber">{departureGate}</p>
+              <div className="status" style={{ backgroundColor: color }}>
+                <span className="statusData">
+                  <h1>{flightStatus}</h1> <br />
+                  {delayA}
+                </span>
               </div>
             </div>
-          </div>
+            <div className="centerData">
+              <div className="left">
+                <p className="departure">Departure</p>
+                <span className="iata" ><h1>{departureAirport}</h1><br />
+                  IATA:{departureIata} • ICAO:{departureIcao}</span>
+                <div className="timer">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th>Scheduled <br />
+                          2020-11-29 20:00:00</th>
+                        <th>Estimated <br />
+                          2020-11-29 20:00:00</th>
+                      </tr>
+                      <tr>
+                        <th>Actual <br />
+                          2020-11-29 20:00:00</th>
+                        <th>Runway <br />
+                          2020-11-29 20:00:00</th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="terminal">
+                  <div>
+                    <p className="tName">Terminal</p>
+                    <p className="tNumber">{departureTerminal}</p>
+                  </div>
+                  <div>
+                    <p className="tName">Gate</p>
+                    <p className="tNumber">{departureGate}</p>
+                  </div>
+                </div>
+              </div>
 
-          <div className="right">
-            <p className="departure">Arrival</p>
-            <span className="iata"><h1>{arrivalAirport}</h1><br />
-              IATA:{arrivalIata} • ICAO:{arrivalIcao}</span>
-            <div className="timer">
-              <table>
-                <tbody>
-                  <tr>
-                    <th>Scheduled <br />
-                      2020-11-29 20:00:00</th>
-                    <th>Estimated <br />
-                      2020-11-29 20:00:00</th>
-                  </tr>
-                  <tr>
-                    <th>Actual <br />
-                      2020-11-29 20:00:00</th>
-                    <th>Runway <br />
-                      2020-11-29 20:00:00</th>
-                  </tr>
-                </tbody>
-              </table>
+              <div className="right">
+                <p className="departure">Arrival</p>
+                <span className="iata"><h1>{arrivalAirport}</h1><br />
+                  IATA:{arrivalIata} • ICAO:{arrivalIcao}</span>
+                <div className="timer">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <th>Scheduled <br />
+                          2020-11-29 20:00:00</th>
+                        <th>Estimated <br />
+                          2020-11-29 20:00:00</th>
+                      </tr>
+                      <tr>
+                        <th>Actual <br />
+                          2020-11-29 20:00:00</th>
+                        <th>Runway <br />
+                          2020-11-29 20:00:00</th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="terminal">
+                  <div>
+                    <p className="tName">Terminal</p>
+                    <p className="tNumber">{arrivalTerminal}</p>
+                  </div>
+                  <div>
+                    <p className="tName">Gate</p>
+                    <p className="tNumber">{arrivalGate}</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="terminal">
-              <div>
-                <p className="tName">Terminal</p>
-                <p className="tNumber">{arrivalTerminal}</p>
-              </div>
-              <div>
-                <p className="tName">Gate</p>
-                <p className="tNumber">{arrivalGate}</p>
-              </div>
+            <div className="footer">
+              Departure Timezone: {departureTimeZone}
+              <p className="dot">
+                •
+              </p>
+              Arrival Timezone: {arrivalTimeZone}
             </div>
           </div>
         </div>
-        <div className="footer">
-          Departure Timezone: {departureTimeZone} 
-          <p className="dot">
-          • 
-          </p>   
-          Arrival Timezone: {arrivalTimeZone}
-        </div>
-      </div>
-    </div>
-  )}
+        {/* <div>
+          <iframe
+            width="600"
+            height="450"
+            loading="lazy"
+            src="https://www.google.com/maps/embed/v1/place?key=&q=-17.05, -145.41667&zoom=2">
+          </iframe>
+        </div> */}
+      </>
+    )
+  }
 
   return (
     <>
