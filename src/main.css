@@ -70,7 +70,6 @@ select {
     display: grid;
     place-items: center;
     padding-top: 8.4vh;
-    height: 50vh;
     min-width: auto;
     z-index: 10;
 }
@@ -280,4 +279,82 @@ th {
 
 .dot {
     padding: 0 1rem;
+}
+
+.map {
+    width: 800px;
+    height: 500px;
+    background-color: #666569;
+    margin-top: 8.4vh;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.enterT {
+    display: flex;
+    animation: enterTop 1s ease;
+}
+
+.exit {
+    display: flex;
+    animation: exit 1s ease;
+}
+
+@keyframes enterTop {
+    0% {
+        animation-timing-function: ease-in;
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    38% {
+        animation-timing-function: ease-out;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    55% {
+        animation-timing-function: ease-in;
+        transform: translateY(-65px);
+    }
+
+    72% {
+        animation-timing-function: ease-out;
+        transform: translateY(0);
+    }
+
+    81% {
+        animation-timing-function: ease-in;
+        transform: translateY(-28px);
+    }
+
+    90% {
+        animation-timing-function: ease-out;
+        transform: translateY(0);
+    }
+
+    95% {
+        animation-timing-function: ease-in;
+        transform: translateY(-8px);
+    }
+
+    100% {
+        animation-timing-function: ease-out;
+        transform: translateY(0);
+    }
+}
+
+@keyframes exit {
+	0% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(-100px);
+	}
 }

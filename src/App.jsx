@@ -197,15 +197,16 @@ export default function App() {
               Arrival Timezone: {arrivalTimeZone}
             </div>
           </div>
+
+          <div className="map">
+            <iframe
+              width="500"
+              height="350"
+              loading="lazy"
+              src="https://www.google.com/maps/embed/v1/place?key=&q=-17.05, -145.41667&zoom=2">
+            </iframe>
+          </div>
         </div>
-        {/* <div>
-          <iframe
-            width="600"
-            height="450"
-            loading="lazy"
-            src="https://www.google.com/maps/embed/v1/place?key=&q=-17.05, -145.41667&zoom=2">
-          </iframe>
-        </div> */}
       </>
     )
   }
