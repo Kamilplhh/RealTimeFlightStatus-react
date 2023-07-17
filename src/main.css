@@ -291,6 +291,7 @@ th {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
     
 }
 
@@ -313,7 +314,7 @@ th {
     background-color: #c2c3ca;
     border: none;
     border-radius: 40px;
-    transition: .4s ease-in;
+    transition: .2s ease-in;
     margin-left: 40px;
     font-size: 20px;
     float: right;
@@ -322,4 +323,8 @@ th {
 .showMap:hover {
     background-color: #919297;
     cursor: pointer;
+}
+
+.map > * {
+    margin: 10px 0;
 }

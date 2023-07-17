@@ -63,6 +63,7 @@ export default function App() {
                 delayA={flight.arrival.delay}
                 latitude={flight.live.latitude}
                 longitude={flight.live.longitude}
+                planeLocationTime={flight.live.updated}
               />
             )
           })
@@ -88,9 +89,10 @@ export default function App() {
 
   if (error) console.log(error);
 
-  const Flight = ({ id, number, airlaneName, departureIata, departureIcao, arrivalIata, arrivalIcao, departureAirport, arrivalAirport, departureTerminal, departureGate, arrivalTerminal, arrivalGate, departureTimeZone, arrivalTimeZone, flightStatus, delayD, delayA, color, latitude, longitude }) => {
+  const Flight = ({ id, number, airlaneName, departureIata, departureIcao, arrivalIata, arrivalIcao, departureAirport, arrivalAirport, departureTerminal, departureGate, arrivalTerminal, arrivalGate, departureTimeZone, arrivalTimeZone, flightStatus, delayD, delayA, color, latitude, longitude, planeLocationTime }) => {
     if (flightStatus === false) {
       flightStatus = "Airborne";
+      planeLocationTime = (new Date(planeLocationTime).toLocaleTimeString());
       setIsMap(true);
     } else {
       flightStatus = "Grounded";
@@ -214,6 +216,7 @@ export default function App() {
 
           {isMap ?
             <div className={`map ${isVisible ? "enterM" : ""}`}>
+              This plane position is from {planeLocationTime}.
               <iframe
                 width="500"
                 height="350"
