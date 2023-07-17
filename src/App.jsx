@@ -9,6 +9,7 @@ export default function App() {
   const today = `${current.getFullYear()}-${('0' + (current.getMonth() + 1)).slice(-2)}-${('0' + current.getDate()).slice(-2)}`;
   const tomorrow = `${current.getFullYear()}-${('0' + (current.getMonth() + 1)).slice(-2)}-${('0' + (current.getDate() + 1)).slice(-2)}`;
   const [newDate, setNewDate] = useState(today);
+  const [isVisible, setIsVisible] = useState(false);
 
   function dataScreen() {
     if (loading) {
@@ -79,6 +80,10 @@ export default function App() {
     setNewFlightNumber("")
     setNewDate(today)
   }
+
+  const setVisible = event => {
+    setIsVisible(current => !current);
+  };
 
   if (error) console.log(error);
 
@@ -195,16 +200,23 @@ export default function App() {
                 •
               </p>
               Arrival Timezone: {arrivalTimeZone}
+
+              <button onClick={setVisible}>
+                Click
+              </button>
             </div>
           </div>
 
-          <div className="map">
+          <div className={`map ${isVisible ? "enterT" : ""}`}>
             <iframe
               width="500"
               height="350"
               loading="lazy"
               src="https://www.google.com/maps/embed/v1/place?key=&q=-17.05, -145.41667&zoom=2">
             </iframe>
+            <button onClick={setVisible}>
+              Click
+            </button>
           </div>
         </div>
       </>

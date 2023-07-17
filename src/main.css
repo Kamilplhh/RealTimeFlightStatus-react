@@ -298,11 +298,6 @@ th {
     animation: enterTop 1s ease;
 }
 
-.exit {
-    display: flex;
-    animation: exit 1s ease;
-}
-
 @keyframes enterTop {
     0% {
         animation-timing-function: ease-in;
@@ -345,16 +340,4 @@ th {
         animation-timing-function: ease-out;
         transform: translateY(0);
     }
-}
-
-@keyframes exit {
-	0% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-
-	100% {
-		opacity: 0;
-		transform: translateY(-100px);
-	}
 }
