@@ -64,6 +64,14 @@ export default function App() {
                 latitude={flight.live.latitude}
                 longitude={flight.live.longitude}
                 planeLocationTime={flight.live.updated}
+                scheduledD={flight.departure.scheduled}
+                estimatedD={flight.departure.estimated}
+                actualD={flight.departure.actual}
+                runwayD={flight.departure.actual_runway}
+                scheduledA={flight.arrival.scheduled}
+                estimatedA={flight.arrival.estimated}
+                actualA={flight.arrival.actual}
+                runwayA={flight.arrival.estimated_runway}
               />
             )
           })
@@ -89,7 +97,7 @@ export default function App() {
 
   if (error) console.log(error);
 
-  const Flight = ({ id, number, airlaneName, departureIata, departureIcao, arrivalIata, arrivalIcao, departureAirport, arrivalAirport, departureTerminal, departureGate, arrivalTerminal, arrivalGate, departureTimeZone, arrivalTimeZone, flightStatus, delayD, delayA, color, latitude, longitude, planeLocationTime }) => {
+  const Flight = ({ id, number, airlaneName, departureIata, departureIcao, arrivalIata, arrivalIcao, departureAirport, arrivalAirport, departureTerminal, departureGate, arrivalTerminal, arrivalGate, departureTimeZone, arrivalTimeZone, flightStatus, delayD, delayA, color, latitude, longitude, planeLocationTime, scheduledD, estimatedD, actualD, runwayD, scheduledA, estimatedA, actualA, runwayA }) => {
     if (flightStatus === false) {
       flightStatus = "Airborne";
       planeLocationTime = (new Date(planeLocationTime).toLocaleTimeString());
@@ -105,6 +113,16 @@ export default function App() {
       color = "green";
       delayA = "On time"
     }
+
+    scheduledD = (new Date(scheduledD).toLocaleString());
+    estimatedD = (new Date(estimatedD).toLocaleString());
+    if(actualD !== null)actualD = (new Date(actualD).toLocaleString());
+    if(runwayD !== null)runwayD = (new Date(runwayD).toLocaleString());
+    scheduledA = (new Date(scheduledA).toLocaleString());
+    estimatedA = (new Date(estimatedA).toLocaleString());
+    if(actualA !== null)actualA = (new Date(actualA).toLocaleString());
+    if(runwayA !== null)runwayA = (new Date(runwayA).toLocaleString());
+
     return (
       <>
         <div className="dataBlock" key={id}>
@@ -140,15 +158,15 @@ export default function App() {
                     <tbody>
                       <tr>
                         <th>Scheduled <br />
-                          2020-11-29 20:00:00</th>
+                          {scheduledD}</th>
                         <th>Estimated <br />
-                          2020-11-29 20:00:00</th>
+                          {estimatedD}</th>
                       </tr>
                       <tr>
                         <th>Actual <br />
-                          2020-11-29 20:00:00</th>
+                          {actualD}</th>
                         <th>Runway <br />
-                          2020-11-29 20:00:00</th>
+                          {runwayD}</th>
                       </tr>
                     </tbody>
                   </table>
@@ -174,15 +192,15 @@ export default function App() {
                     <tbody>
                       <tr>
                         <th>Scheduled <br />
-                          2020-11-29 20:00:00</th>
+                          {scheduledA}</th>
                         <th>Estimated <br />
-                          2020-11-29 20:00:00</th>
+                          {estimatedA}</th>
                       </tr>
                       <tr>
                         <th>Actual <br />
-                          2020-11-29 20:00:00</th>
+                          {actualA}</th>
                         <th>Runway <br />
-                          2020-11-29 20:00:00</th>
+                          {runwayA}</th>
                       </tr>
                     </tbody>
                   </table>
