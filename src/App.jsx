@@ -205,11 +205,10 @@ export default function App() {
               Arrival Timezone: {arrivalTimeZone}
 
               {isMap ?
-                <button onClick={setVisible}>
-                  Click
+                <button className="showMap" onClick={setVisible}>
+                  Location
                 </button>
                 : ''}
-
             </div>
           </div>
 
@@ -221,8 +220,8 @@ export default function App() {
                 loading="lazy"
                 src="https://www.google.com/maps/embed/v1/place?key=&q=-17.05, -145.41667&zoom=2">
               </iframe>
-              <button onClick={setVisible}>
-                Click
+              <button className="showMap" onClick={setVisible}>
+                Panel
               </button>
             </div>
             : ''}

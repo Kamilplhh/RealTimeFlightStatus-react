@@ -288,6 +288,7 @@ th {
     margin-top: 8.4vh;
     position: absolute;
     display: none;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     
@@ -303,7 +304,22 @@ th {
         opacity: 0;
     }
 
-    100% {
+    30% {
         opacity: 1;
     }
+}
+
+.showMap {
+    background-color: #c2c3ca;
+    border: none;
+    border-radius: 40px;
+    transition: .4s ease-in;
+    margin-left: 40px;
+    font-size: 20px;
+    float: right;
+}
+
+.showMap:hover {
+    background-color: #919297;
+    cursor: pointer;
 }
