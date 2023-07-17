@@ -293,51 +293,17 @@ th {
     
 }
 
-.enterT {
+.enterM {
     display: flex;
-    animation: enterTop 1s ease;
+    animation: enter 1s ease;
 }
 
-@keyframes enterTop {
+@keyframes enter {
     0% {
-        animation-timing-function: ease-in;
         opacity: 0;
-        transform: translateY(-100px);
-    }
-
-    38% {
-        animation-timing-function: ease-out;
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    55% {
-        animation-timing-function: ease-in;
-        transform: translateY(-65px);
-    }
-
-    72% {
-        animation-timing-function: ease-out;
-        transform: translateY(0);
-    }
-
-    81% {
-        animation-timing-function: ease-in;
-        transform: translateY(-28px);
-    }
-
-    90% {
-        animation-timing-function: ease-out;
-        transform: translateY(0);
-    }
-
-    95% {
-        animation-timing-function: ease-in;
-        transform: translateY(-8px);
     }
 
     100% {
-        animation-timing-function: ease-out;
-        transform: translateY(0);
+        opacity: 1;
     }
 }
