@@ -31,10 +31,20 @@ select {
     margin: 1vh 0;
 }
 
+.fa {
+    color: rgb(107, 104, 104);
+    padding-left: 4px;
+}
+
+.forms >div {
+    background-color: white;
+    border-radius: 2px;
+    border-right: 1px solid black;
+}
+
 .formRows {
     border-radius: 2px;
-    border: none;
-    border-right: 1px solid black;
+    border: none;  
     padding: 10px;
     width: 200px;
 }
@@ -42,7 +52,6 @@ select {
 .formRowsS {
     border-radius: 2px;
     border: none;
-    border-right: 1px solid black;
     padding: 10px 20px;
 }
 
@@ -50,6 +59,7 @@ select {
     border-radius: 2px;
     background-color: #726f6f;
     border: 1px solid black;
+    border-left: none;
     padding: 8px 20px;
     transition: 0.2s ease-in;
     cursor: pointer;
@@ -305,7 +315,7 @@ th {
     justify-content: center;
     align-items: center;
     color: white;
-    
+
 }
 
 .enterM {
@@ -338,6 +348,6 @@ th {
     cursor: pointer;
 }
 
-.map > * {
+.map>* {
     margin: 10px 0;
 }

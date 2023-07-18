@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import useFetch from "./useFetch";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCity, faPlaneUp, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 
 export default function App() {
   const { flights, loading, error } = useFetch("jsonTestFile/data.json");
@@ -260,17 +261,20 @@ export default function App() {
           <div className="forms">
             <div>
               <span>
-
+                <FontAwesomeIcon icon={faCity} className='fa'></FontAwesomeIcon>
               </span>
               <input type="text" id="airLine" className="formRows" value={NewAirLine} autoComplete="off" placeholder="Airline (e.g United Airlines)" onChange={e => setNewAirLine(e.target.value)} required />
             </div>
             <div>
               <span className="formIcon">
-
+                <FontAwesomeIcon icon={faPlaneUp} className='fa'></FontAwesomeIcon>
               </span>
               <input type="text" id="flightNumber" className="formRows" value={NewFlightNumber} autoComplete="off" placeholder="Flight Number (e.g. UA2402)" onChange={e => setNewFlightNumber(e.target.value)} required />
             </div>
             <div>
+              <span className="formIcon">
+                <FontAwesomeIcon icon={faCalendarDays} className='fa'></FontAwesomeIcon>
+              </span>
               <select id="date" className="formRowsS" onChange={e => setNewDate(e.target.value)} required>
                 <option value={today}>Today</option>
                 <option value={tomorrow}>Tomorrow</option>
