@@ -25,19 +25,32 @@ select {
     width: auto;
 }
 
-.formRows {
+.forms {
+    display: flex;
+    justify-content: center;
     margin: 1vh 0;
+}
+
+.formRows {
     border-radius: 2px;
     border: none;
     border-right: 1px solid black;
-    padding: 10px 38px;
+    padding: 10px;
+    width: 200px;
+}
+
+.formRowsS {
+    border-radius: 2px;
+    border: none;
+    border-right: 1px solid black;
+    padding: 10px 20px;
 }
 
 .btn {
     border-radius: 2px;
     background-color: #726f6f;
     border: 1px solid black;
-    padding: 10px 20px;
+    padding: 8px 20px;
     transition: 0.2s ease-in;
     cursor: pointer;
     color: white;
