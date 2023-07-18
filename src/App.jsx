@@ -13,6 +13,8 @@ export default function App() {
   const [newDate, setNewDate] = useState(today);
   const [isVisible, setIsVisible] = useState(false);
   const [isMap, setIsMap] = useState(false);
+  const API_KEY = import.meta.env.VITE_GOOGLE_KEY 
+  const [apiLink, setApiLink] = useState("");
 
   function dataScreen() {
     if (loading) {
@@ -95,11 +97,12 @@ export default function App() {
 
   const setVisible = event => {
     setIsVisible(current => !current);
-  };
+  }
 
   if (error) console.log(error);
 
   const Flight = ({ id, number, airlaneName, departureIata, departureIcao, arrivalIata, arrivalIcao, departureAirport, arrivalAirport, departureTerminal, departureGate, arrivalTerminal, arrivalGate, departureTimeZone, arrivalTimeZone, flightStatus, delayD, delayA, color, latitude, longitude, planeLocationTime, scheduledD, estimatedD, actualD, runwayD, scheduledA, estimatedA, actualA, runwayA }) => {
+    setApiLink(`https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=${latitude}, ${longitude}&zoom=2`)
     if (flightStatus === false) {
       flightStatus = "Airborne";
       planeLocationTime = (new Date(planeLocationTime).toLocaleTimeString());
@@ -241,7 +244,7 @@ export default function App() {
                 width="500"
                 height="350"
                 loading="lazy"
-                src="https://www.google.com/maps/embed/v1/place?key=&q=-17.05, -145.41667&zoom=2">
+                src={apiLink}>
               </iframe>
               <button className="showMap" onClick={setVisible}>
                 Panel
