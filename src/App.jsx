@@ -5,12 +5,9 @@ import { faCity, faPlaneUp, faCalendarDays } from '@fortawesome/free-solid-svg-i
 
 export default function App() {
   const { flights, loading, error } = useFetch("jsonTestFile/data.json");
-  const [NewAirLine, setNewAirLine] = useState("");
-  const [NewFlightNumber, setNewFlightNumber] = useState("");
   const current = new Date();
   const today = `${current.getFullYear()}-${('0' + (current.getMonth() + 1)).slice(-2)}-${('0' + current.getDate()).slice(-2)}`;
   const tomorrow = `${current.getFullYear()}-${('0' + (current.getMonth() + 1)).slice(-2)}-${('0' + (current.getDate() + 1)).slice(-2)}`;
-  const [newDate, setNewDate] = useState(today);
   const [isVisible, setIsVisible] = useState(false);
   const [isMap, setIsMap] = useState(false);
   const API_KEY = import.meta.env.VITE_GOOGLE_KEY 
@@ -83,16 +80,6 @@ export default function App() {
         </>
       )
     }
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault()
-
-    onSubmit(NewAirLine, NewFlightNumber, newDate)
-
-    setNewAirLine("")
-    setNewFlightNumber("")
-    setNewDate(today)
   }
 
   const setVisible = event => {
@@ -260,25 +247,25 @@ export default function App() {
     <>
       <div className="flightForm">
         <img src="./img/plane.png" />
-        <form onSubmit={handleSubmit}>
+        <form>
           <div className="forms">
             <div>
               <span>
                 <FontAwesomeIcon icon={faCity} className='fa'></FontAwesomeIcon>
               </span>
-              <input type="text" id="airLine" className="formRows" value={NewAirLine} autoComplete="off" placeholder="Airline (e.g United Airlines)" onChange={e => setNewAirLine(e.target.value)} required />
+              <input type="text" id="airLine" className="formRows" autoComplete="off" placeholder="Airline (e.g United Airlines)" required />
             </div>
             <div>
               <span className="formIcon">
                 <FontAwesomeIcon icon={faPlaneUp} className='fa'></FontAwesomeIcon>
               </span>
-              <input type="text" id="flightNumber" className="formRows" value={NewFlightNumber} autoComplete="off" placeholder="Flight Number (e.g. UA2402)" onChange={e => setNewFlightNumber(e.target.value)} required />
+              <input type="text" id="flightNumber" className="formRows" autoComplete="off" placeholder="Flight Number (e.g. UA2402)" required />
             </div>
             <div>
               <span className="formIcon">
                 <FontAwesomeIcon icon={faCalendarDays} className='fa'></FontAwesomeIcon>
               </span>
-              <select id="date" className="formRowsS" onChange={e => setNewDate(e.target.value)} required>
+              <select id="date" className="formRowsS" required>
                 <option value={today}>Today</option>
                 <option value={tomorrow}>Tomorrow</option>
               </select>
