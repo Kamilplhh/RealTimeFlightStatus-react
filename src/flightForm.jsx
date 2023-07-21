@@ -8,7 +8,7 @@ export function FlightForm() {
 
     return (
         <div className="flightForm">
-            <img src="./images/plane.png" />
+            <img src="images/plane.png" />
             <form>
                 <div className="forms">
                     <div>
