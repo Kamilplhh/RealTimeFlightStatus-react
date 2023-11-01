@@ -4,8 +4,8 @@ import useFetch from "./useFetch";
 export function DataPanel() {
     const [isVisible, setIsVisible] = useState(false);
     const [isMap, setIsMap] = useState(false);
-    const API_KEY = import.meta.env.VITE_GOOGLE_KEY
-    const [apiLink, setApiLink] = useState("");
+    // const API_KEY = import.meta.env.VITE_GOOGLE_KEY
+    // const [apiLink, setApiLink] = useState("");
     const { flights, loading, error } = useFetch("jsonTestFile/data.json");
 
     function dataScreen() {
@@ -80,7 +80,7 @@ export function DataPanel() {
     if (error) console.log(error);
 
     const Flight = ({ id, number, airlaneName, departureIata, departureIcao, arrivalIata, arrivalIcao, departureAirport, arrivalAirport, departureTerminal, departureGate, arrivalTerminal, arrivalGate, departureTimeZone, arrivalTimeZone, flightStatus, delayD, delayA, color, latitude, longitude, planeLocationTime, scheduledD, estimatedD, actualD, runwayD, scheduledA, estimatedA, actualA, runwayA }) => {
-        setApiLink(`https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=${latitude}, ${longitude}&zoom=2`)
+        // setApiLink(`https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=${latitude}, ${longitude}&zoom=2`)
         if (flightStatus === false) {
             flightStatus = "Airborne";
             planeLocationTime = (new Date(planeLocationTime).toLocaleTimeString());
@@ -218,11 +218,13 @@ export function DataPanel() {
                     {isMap ?
                         <div className={`map ${isVisible ? "enterM" : ""}`}>
                             This plane position is from {planeLocationTime}.
-                            <iframe
-                                width="500"
-                                height="350"
+                            <iframe 
+                                src="https://maps.google.com/maps?q=-17.05,-145.41667&amp;t=&amp;z=2&amp;ie=UTF8&amp;iwloc=&amp;output=embed" 
+                                frameborder="0" 
+                                scrolling="no" 
                                 loading="lazy"
-                                src={apiLink}>
+                                style="width: 500px; 
+                                height: 300px;">
                             </iframe>
                             <button className="showMap" onClick={setVisible}>
                                 Panel
